@@ -8,6 +8,12 @@ bundle install
 yarn install
 ```
 
+Run migrations and seeds
+```
+rails db:migrate
+rails db:seed
+```
+
 Run the app
 ```
 rails s
