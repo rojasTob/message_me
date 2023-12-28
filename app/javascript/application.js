@@ -4,9 +4,14 @@ import "controllers"
 import "@hotwired/turbo-rails"
 import * as jquery from "jquery"
 import "semantic-ui"
-
+import utils from "./utils"
+import "./channels/chatroom_channel"
 
 $(document).on('turbo:load', function() {
-  console.log('loaded turbo links')
-  $('.ui.dropdown').dropdown()
+  console.log('loaded turbo links');
+  $('.ui.dropdown').dropdown();
+  $('.message .close').on('click', function(){
+    $(this).closest('.message').transition('fade');
+  });
+  utils.scrollBottom();
 });
